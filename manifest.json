@@ -1,7 +1,7 @@
 {
   "name": "Code snippet for Facebook",
   "default_locale": "en",
-  "version": "1.0",
+  "version": "0.1",
   "description": "UI Snippet for code sharing on Facebook! (Chrome extension)",
   "manifest_version": 2,
   "homepage_url": "https://github.com/ktquez/code-snippet-for-facebook",
