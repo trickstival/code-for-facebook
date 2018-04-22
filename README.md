@@ -1,5 +1,5 @@
-# code-snippet-for-facebook
-UI Snippet for code sharing on Facebook! (Chrome extension)
+# code-for-facebook
+UI code sharing on Facebook, markdown support! (Chrome extension)
 
 ---
 
