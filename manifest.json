@@ -1,0 +1,44 @@
+{
+  "name": "Code snippet for Facebook",
+  "default_locale": "en",
+  "version": "1.0",
+  "description": "UI Snippet for code sharing on Facebook! (Chrome extension)",
+  "manifest_version": 2,
+  "homepage_url": "https://github.com/ktquez/code-snippet-for-facebook",
+  "author": [
+    {
+      "name": "Alan Ktquez",
+      "email": "ktquez@gmail.com"
+    },
+    {
+      "name": "Patrick Stival"
+    }
+  ],
+  "icons": {
+    "16": "images/icons/16x16.png",
+    "32": "images/icons/32x32.png",
+    "48": "images/icons/48x48.png",
+    "64": "images/icons/64x64.png",
+    "128": "images/icons/128x128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.facebook.com/*"
+      ],
+      "css": [
+        "css/vendor/prism-okaidia.min.css",
+        "css/main.css"
+      ],
+      "js": [
+        "js/vendor/beautify-html.min.js",
+        "js/vendor/beautify-css.min.js",
+        "js/vendor/beautify.min.js",
+        "js/vendor/prism.min.js",
+        "js/vendor/remarkable.min.js",
+        "js/util.js",
+        "js/cff.js"
+      ]
+    }
+  ]
+}
