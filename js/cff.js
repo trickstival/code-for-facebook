@@ -4,7 +4,6 @@
   let targets = document.querySelectorAll('.userContentWrapper')
   handle(targets)
   setMutationObserver()
-  prepareTextarea();
 
   function handle (targets) {
     targets.forEach(target => {
