@@ -36,8 +36,7 @@
         "js/vendor/beautify.min.js",
         "js/vendor/prism.min.js",
         "js/vendor/remarkable.min.js",
-        "js/util.js",
-        "js/cff.js"
+        "dist/main.js"
       ]
     }
   ]
