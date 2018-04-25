@@ -39,5 +39,9 @@
         "dist/main.js"
       ]
     }
+  ],
+  "permissions": [
+    "https://jsfiddle.net/",
+    "webview"
   ]
 }

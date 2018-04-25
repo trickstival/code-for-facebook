@@ -1,4 +1,4 @@
-(function (window) {
+export default (function (window) {
   $cff = window.$cff
 
   let targets = document.querySelectorAll('.userContentWrapper')
@@ -10,6 +10,12 @@
       let post = target.querySelector('.userContent')
       let content = $cff.extractContentPost(post)
       $cff.clearPost(post)
+
+      if($cff.playground.hasPlayground(content)) {
+        console.log('tem o playyyy')
+        $cff.inject(post, $cff.playground.generateFrames(content))
+      }
+      console.log('tem nãao')
 
       $cff.inject(post, $cff.createBlock($cff.markdown.render(content)))
     })
