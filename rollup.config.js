@@ -6,6 +6,9 @@ export default {
         file: 'dist/main.js',
         format: 'iife'
     },
+    watch: {
+      include: 'js/**'
+    },
     plugins: [
       uglify()
     ]
