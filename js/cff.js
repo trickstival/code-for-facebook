@@ -1,5 +1,4 @@
-(function (window) {
-
+export default (function (window) {
   $cff = window.$cff
 
   let targets = document.querySelectorAll('.userContentWrapper')
@@ -7,10 +6,18 @@
   setMutationObserver()
 
   function handle (targets) {
+    let i = 0;
     targets.forEach(target => {
       let post = target.querySelector('.userContent')
       let content = $cff.extractContentPost(post)
       $cff.clearPost(post)
+
+      if($cff.playground.hasPlayground(content)) {
+        console.log('Playground found')
+        post.id = `post-block-${++i}`
+        $cff.inject(post, $cff.playground.generateFrames(content))
+      }
+      console.log('Playground not found')
 
       $cff.inject(post, $cff.createBlock($cff.markdown.render(content)))
     })
@@ -29,5 +36,4 @@
       childList: true
     })
   }
-
 })(window)

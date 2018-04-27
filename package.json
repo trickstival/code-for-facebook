@@ -1,0 +1,25 @@
+{
+  "name": "code-for-facebook",
+  "version": "0.0.1",
+  "description": "UI code sharing on Facebook, markdown support! (Chrome extension)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktquez/code-for-facebook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ktquez/code-for-facebook/issues"
+  },
+  "homepage": "https://github.com/ktquez/code-for-facebook#readme",
+  "devDependencies": {
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}
