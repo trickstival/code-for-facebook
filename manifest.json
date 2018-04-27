@@ -36,12 +36,9 @@
         "js/vendor/beautify.min.js",
         "js/vendor/prism.min.js",
         "js/vendor/remarkable.min.js",
+        "js/vendor/postscribe.min.js",
         "dist/main.js"
       ]
     }
-  ],
-  "permissions": [
-    "https://jsfiddle.net/",
-    "webview"
   ]
 }
