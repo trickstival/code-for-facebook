@@ -2,6 +2,8 @@
  * Playground functions
  */
 
+const REGEX_HTTPS = /(\$https)[\S]+/g
+
 export default {
   playgrounds: [
     'https://codepen.io',
@@ -11,20 +13,25 @@ export default {
   ],
 
   hasPlayground(content) {
-    return this.playgrounds.filter(playground => {
-      return content.includes(playground)
-        && content.indexOf(playground) > content.lastIndexOf('<$cffplay>')
-        && content.indexOf(playground) < content.lastIndexOf('</$cffplay>')
-    }).length 
-      && content.includes('<$cffplay>') 
-      && content.includes('</$cffplay>')
-  },
-  generateFrames(str) {
-    const fiddleUrl = str.substring(
-      str.lastIndexOf('<$cffplay>')+1,str.lastIndexOf('</$cffplay>')
-    )
+    const links = content.match(REGEX_HTTPS)
+    if(!links || !links.length) {
+      return false
+    }
 
-    window.postscribe('.cff', '<span>OI</span>')
+    return links.filter(link => 
+      this.playgrounds.filter(play => link.includes(play)).length
+    )
+  },
+  generateFrames(str, id) {
+    const fiddleUrl = str.match(REGEX_HTTPS)[0].substring(1)
+
+    const iframe = document.createElement('iframe')
+    iframe.src = fiddleUrl
+    iframe.allowPaymentRequest = true
+    iframe.allowFullscreen = true
+    iframe.width = '100%'
+    iframe.height = 400
+    iframe.frameBorder = 0
 
     return iframe
   }
