@@ -57,4 +57,4 @@ export default window.$cff = {
 
   markdown,
   playground
-}
+};

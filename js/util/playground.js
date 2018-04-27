@@ -24,13 +24,8 @@ export default {
       str.lastIndexOf('<$cffplay>')+1,str.lastIndexOf('</$cffplay>')
     )
 
-    const iframe = document.createElement('iframe')
-
-    iframe.style.width = '200px'
-    iframe.style.height = '200px'
-
-    iframe.src = fiddleUrl
+    window.postscribe('.cff', '<span>OI</span>')
 
     return iframe
   }
-}
+};

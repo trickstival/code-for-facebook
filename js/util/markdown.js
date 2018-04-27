@@ -27,4 +27,4 @@ export default {
   render(content) {
     return this.remarkable().render(content)
   }
-}
+};
