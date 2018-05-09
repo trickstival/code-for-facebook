@@ -2,15 +2,17 @@
  * Playground functions
  */
 
-const REGEX_HTTPS = /(\$https)[\S]+/g
+const playgrounds = [
+  'codepen.io',
+  'gist.github.com',
+  'jsfiddle.net',
+  'codesandbox.io'
+]
+
+const REGEX_HTTPS = new RegExp(`(https:\/\/)?(${playgrounds.join('|')})(\/.+)?`, 'g')
 
 export default {
-  playgrounds: [
-    'https://codepen.io',
-    'https://gist.github.com',
-    'https://jsfiddle.net',
-    'https://codesandbox.io/'
-  ],
+  playgrounds,
 
   hasPlayground(content) {
     const links = content.match(REGEX_HTTPS)
@@ -23,7 +25,12 @@ export default {
     )
   },
   generateFrames(str, id) {
-    const fiddleUrl = str.match(REGEX_HTTPS)[0].substring(1)
+    let fiddleUrl = str.match(REGEX_HTTPS)[0]
+
+    if(fiddleUrl.includes('jsfiddle.net') && !/embedded\b/.test(fiddleUrl)) {
+      const endsWithSlash = fiddleUrl.substring(fiddleUrl.length - 1) === '/'
+      fiddleUrl += `${ endsWithSlash ? '' : '/' }embedded`
+    }
 
     const iframe = document.createElement('iframe')
     iframe.src = fiddleUrl

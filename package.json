@@ -4,7 +4,7 @@
   "description": "UI code sharing on Facebook, markdown support! (Chrome extension)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register",
     "dev": "rollup -c --watch",
     "build": "rollup -c"
   },
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/ktquez/code-for-facebook#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^5.1.1",
     "rollup-plugin-uglify": "^3.0.0"
   }
 }
