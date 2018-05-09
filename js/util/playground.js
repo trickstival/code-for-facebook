@@ -3,10 +3,11 @@
  */
 
 const playgrounds = [
-  'codepen.io',
-  'gist.github.com',
   'jsfiddle.net',
-  'codesandbox.io'
+  // Only jsfiddle is supported for now
+  // 'codepen.io',
+  // 'gist.github.com',
+  // 'codesandbox.io'
 ]
 
 const REGEX_HTTPS = new RegExp(`(https:\/\/)?(${playgrounds.join('|')})(\/.+)?`, 'g')
